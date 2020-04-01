@@ -1,0 +1,23 @@
+name: Ci
+
+on: [push]
+
+jobs:
+  build:
+    env:
+      ENV_1: env1
+      ENV_2: $HOME
+      ENV_3: env3
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: execute script one
+      run: |
+        export ENV_4=env4
+        chmod a+x ${{ github.workspace }}/script.sh
+        ${{ github.workspace }}/script.sh
+      env:
+        ENV_3: ${{ env.ENV_3 }}
+    - name: execute script twice
+      run: |
+        ${{ github.workspace }}/script.sh
