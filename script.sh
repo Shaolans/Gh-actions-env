@@ -12,3 +12,6 @@ echo "ENV_6"
 echo $ENV_6
 echo "ENV_7 (\$1)"
 echo $1
+cd $HOME
+ls -la
+pwd
