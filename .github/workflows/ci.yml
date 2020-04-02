@@ -17,8 +17,8 @@ jobs:
     - name: execute script one
       run: |
         export ENV_4=env4
-        chmod a+x ${{ github.workspace }}/script.sh $ENV_7
-        ${{ github.workspace }}/script.sh
+        chmod a+x ${{ github.workspace }}/script.sh
+        ${{ github.workspace }}/script.sh $ENV_7
       env:
         ENV_3: ${{ env.ENV_3 }}
     - name: execute script twice
