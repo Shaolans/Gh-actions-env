@@ -8,6 +8,8 @@ jobs:
       ENV_1: env1
       ENV_2: $HOME
       ENV_3: env3
+      ENV_5: $GITHUB_REPOSITORY
+      ENV_6: ${{ github.workspace }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
