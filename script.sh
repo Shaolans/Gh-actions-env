@@ -10,3 +10,5 @@ echo "ENV_5"
 echo $ENV_5
 echo "ENV_6"
 echo $ENV_6
+echo "ENV_7 (\$1)"
+echo $1

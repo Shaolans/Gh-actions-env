@@ -10,16 +10,17 @@ jobs:
       ENV_3: env3
       ENV_5: $GITHUB_REPOSITORY
       ENV_6: ${{ github.workspace }}
+      ENV_7: $GITHUB_REPOSITORY
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: execute script one
       run: |
         export ENV_4=env4
-        chmod a+x ${{ github.workspace }}/script.sh
+        chmod a+x ${{ github.workspace }}/script.sh $ENV_7
         ${{ github.workspace }}/script.sh
       env:
         ENV_3: ${{ env.ENV_3 }}
     - name: execute script twice
       run: |
-        ${{ github.workspace }}/script.sh
+        ${{ github.workspace }}/script.sh $ENV_7
